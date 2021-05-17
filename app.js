@@ -1,20 +1,21 @@
-const profileDataArgs = process.argv.slice(2, process.argv.length);
-// console.log(profileDataArgs);
+const inquirer = require('inquirer');
+// const fs = require('fs');
+// const generatePage = require('./src/page-template');
 
-// Lesson 9.1
-// const printProfileData = (profileDataArr) => {
-//     // for (i = 0; i < profileDataArr.length; i++) {
-//     //     console.log(profileDataArr[i]);
-//     // }
+// const pageHTML = generatePage(name, github);
 
-//     // profileDataArr.forEach((profileItem) => {
-//     //     console.log(profileItem);
-//     // });
+// fs.writeFile('./index.html', pageHTML, (err) => {
+//   if (err) throw err;
 
-//     profileDataArr.forEach(profileItem => console.log(profileItem));
+//   console.log('Portfolio complete! Check out index.html to see the output!');
+// });
 
-//     // in terms of functionality, lines 5-7 = 9-11 = 13
-// };
-
-// printProfileData(profileDataArgs);
-
+inquirer
+    .prompt([
+        {
+            type: 'input',
+            name: 'name',
+            message: 'What is your name?'
+        }
+    ])
+    .then(answers => console.log(answers));
